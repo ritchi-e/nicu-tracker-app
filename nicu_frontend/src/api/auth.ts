@@ -2,7 +2,7 @@ import axios from "axios";
 import type { Patient, Entry } from "./types";
 
 const api = axios.create({
-  baseURL: "http://127.0.0.1:8000/api",
+  baseURL: import.meta.env.VITE_API_BASE_URL,
 });
 
 //  Request Interceptor: Set token every time
@@ -29,9 +29,10 @@ api.interceptors.response.use(
 
       try {
         const refreshToken = localStorage.getItem("refresh");
-        const response = await axios.post("http://127.0.0.1:8000/api/token/refresh/", {
-          refresh: refreshToken,
-        });
+        const response = await axios.post(
+          `${import.meta.env.VITE_API_BASE_URL}/token/refresh/`,
+          { refresh: refreshToken }
+        );
 
         const newAccess = response.data.access;
         localStorage.setItem("access", newAccess);

@@ -93,8 +93,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'nicu_db',
-        'USER': 'nicu_user',
-        'PASSWORD': 'nicu_pass',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
         'HOST': 'localhost',
         'PORT': '5432',
     }
