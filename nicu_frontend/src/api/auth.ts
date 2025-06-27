@@ -52,10 +52,10 @@ api.interceptors.response.use(
 );
 
 //  Export patient/entry API methods
-export const getPatients = () => api.get<Patient[]>("/patients/");
-export const createPatient = (data: Patient) => api.post<Patient>("/patients/", data);
-export const getPatientById = (id: string) => api.get<Patient>(`/patients/${id}/`);
-export const deletePatient = (id: string) => api.delete(`/patients/${id}/`);
+export const getPatients = () => api.get<Patient[]>("/api/patients/");
+export const createPatient = (data: Patient) => api.post<Patient>("/api/patients/", data);
+export const getPatientById = (id: string) => api.get<Patient>(`/api/patients/${id}/`);
+export const deletePatient = (id: string) => api.delete(`/api/patients/${id}/`);
 
-export const createEntry = (data: Entry) => api.post<Entry>("/entries/", data);
-export const getEntries = () => api.get<Entry[]>("/entries/");
+export const createEntry = (data: Entry) => api.post<Entry>("/api/entries/", data);
+export const getEntries = () => api.get<Entry[]>("/api/entries/");
